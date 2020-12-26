@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+            margin-top: 15%;
+        }
+
+        h1 {
+            font-size: 200px;
+        }
+
+        body{
+  background:#000;
+  animation: pulsate 2s ease-in-out infinite;
+}
+
+@keyframes pulsate { /* You can add more % with more colors! */
+  0% {background-color: black;}
+  50% {background-color: white;}
+  100% {background-color: black;}
+} 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+            <h1 id="value">0000</h1>
+        </div>
+    </div>
+    <script>
+        const timer = ms => new Promise(res => setTimeout(res, ms))
+        async function loop() {
+            let j = 0;
+            for (j = 0; j <= 2021; j++) {
+                document.getElementById("value").innerHTML = j;
+                await timer(14);
+                console.log("oh");
+            }
+        }
+
+        loop();
+    </script>
+</body>
+
+</html>
